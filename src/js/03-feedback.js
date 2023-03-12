@@ -14,7 +14,7 @@ const onFormInput = event => {
 
 const onFormSubmit = event => {
   event.preventDefault();
-  if (inputEl.value !== '' && textareaEl.value !== '') {
+  if (inputEl.value.trim() !== '' && textareaEl.value.trim() !== '') {
     console.log(formDataValues);
     localStorage.removeItem(USER_FORM_DATA);
     event.target.reset();
