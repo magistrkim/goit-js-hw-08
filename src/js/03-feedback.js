@@ -14,9 +14,13 @@ const onFormInput = event => {
 
 const onFormSubmit = event => {
   event.preventDefault();
-  console.log(formDataValues);
-  localStorage.removeItem(USER_FORM_DATA);
-  event.target.reset();
+  if (inputEl.value !== '' && textareaEl.value !== '') {
+    console.log(formDataValues);
+    localStorage.removeItem(USER_FORM_DATA);
+    event.target.reset();
+    return;
+  }
+  alert(`All fields are required to be filled`);
 };
 
 const populateFormData = () => {
